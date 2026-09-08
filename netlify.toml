@@ -1,0 +1,27 @@
+[build]
+  publish = "."
+
+# Filenames here aren't content-hashed, so avoid "immutable" — a future edit
+# to styles.css/main.js/an image should still reach returning visitors in a
+# reasonable time rather than being stuck behind a year-long cache.
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
