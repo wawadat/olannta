@@ -1,0 +1,824 @@
+/* ==========================================================================
+   Olannta — Irish Knitting Wool Distributor
+   ========================================================================== */
+
+:root {
+  --bg-cream: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --text-dark: #1E2322;
+  --text-muted: #5C6460;
+  --border-color: #E6E1DA;
+  --olannta-pink: #E85B7A;
+  --donegal-navy: #1F3A52;
+  --donegal-mustard: #C78A2C;
+  --donegal-green: #2B5740;
+  --donegal-rust: #9E3D29;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.hamburger:focus-visible {
+  outline: 2px solid var(--olannta-pink);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 1rem;
+  background: var(--text-dark);
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  z-index: 2000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* --- 1. HEADER BAR --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.9rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.brand-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.2rem;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--olannta-pink);
+}
+.nav-btn {
+  background: var(--text-dark);
+  color: #fff !important;
+  padding: 0.65rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-btn:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-dark);
+  margin: 0 auto;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- 2. HERO SECTION --- */
+.hero {
+  max-width: 1280px;
+  margin: 3.5rem auto 4.5rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #EDE6DC;
+  padding: 6px 15px;
+  border-radius: 30px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+.hero-badge span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--donegal-green);
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4rem;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 2.2rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--olannta-pink);
+  color: #fff;
+  padding: 0.95rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.15s, opacity 0.2s;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--text-dark);
+  padding: 0.95rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-secondary:hover {
+  background: #f4ede4;
+  border-color: #d8cebf;
+}
+.hero-visual {
+  position: relative;
+  height: 500px;
+  background: #EDE6DC;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.2rem;
+  background-image: linear-gradient(to top, rgba(20,28,24,0.88) 0%, rgba(20,28,24,0.2) 65%, transparent 100%),
+                    url('../images/hero-heritage.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.hero-visual-caption h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+.hero-visual-caption p {
+  font-size: 0.88rem;
+  color: #E2E8F0;
+}
+
+/* --- 3. INFO BANNER --- */
+.info-banner {
+  background: var(--text-dark);
+  color: #fff;
+  padding: 2.5rem 2rem;
+}
+.info-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.info-item h4 {
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.info-item p {
+  font-size: 0.82rem;
+  color: #A3AFA8;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+/* --- 4. THE RANGE --- */
+.section-container {
+  max-width: 1280px;
+  margin: 5.5rem auto;
+  padding: 0 2rem;
+}
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.8rem;
+}
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 0.8rem;
+}
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+.range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+.wool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s;
+}
+.wool-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.06);
+}
+.wool-thumb {
+  height: 240px;
+  position: relative;
+  background-color: #efe8de;
+}
+.wool-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.wool-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.wool-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.wool-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.42rem;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+.wool-body p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.wool-meta {
+  border-top: 1px solid #F0ECE4;
+  padding-top: 1.1rem;
+  margin-bottom: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.btn-outline {
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  text-decoration: none;
+  text-align: center;
+  padding: 0.78rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:hover {
+  background: var(--text-dark);
+  color: #fff;
+}
+
+/* --- 5. TRADE ENQUIRIES --- */
+.trade-section {
+  background: #F2ECE1;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 5.5rem 2rem;
+}
+.trade-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4.5rem;
+}
+.trade-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.trade-info p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.moq-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--donegal-green);
+  margin-bottom: 2.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.trade-guarantee {
+  list-style: none;
+}
+.trade-guarantee li {
+  margin-bottom: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-card {
+  background: #fff;
+  padding: 2.8rem;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.04);
+  border: 1px solid var(--border-color);
+}
+.form-group {
+  margin-bottom: 1.4rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 0.88rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: var(--bg-cream);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--olannta-pink);
+  background: #fff;
+}
+
+.form-status {
+  margin-top: 1.2rem;
+  padding: 0.95rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+.form-status.is-visible {
+  display: flex;
+}
+.form-status.success {
+  background: #E7F3EB;
+  color: var(--donegal-green);
+  border: 1px solid #C6E2CF;
+}
+
+/* --- 6. PURCHASE A SAMPLE BOARD --- */
+.sample-section {
+  max-width: 1280px;
+  margin: 5.5rem auto;
+  padding: 0 2rem;
+}
+.sample-box {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+.sample-media {
+  padding: 3.5rem;
+  background: #FAF5EE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--border-color);
+}
+.sample-photo-frame {
+  height: 290px;
+  border-radius: var(--radius);
+  background: url('../images/sample-board.jpg') center/cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  margin-bottom: 1.8rem;
+}
+.sample-copy h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.85rem;
+  margin-bottom: 0.85rem;
+}
+.sample-copy p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.sample-form-side {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.price-callout {
+  margin-bottom: 1.8rem;
+}
+.price-tag {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.price-note {
+  font-size: 0.88rem;
+  color: var(--donegal-green);
+  font-weight: 600;
+}
+
+/* --- 7. OUR STORY --- */
+.story-section {
+  background: #FAF8F5;
+  padding: 5.5rem 2rem 4.5rem;
+  border-top: 1px solid var(--border-color);
+}
+.story-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+.story-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 1.6rem;
+}
+.story-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  text-align: left;
+}
+.story-body p {
+  margin-bottom: 1.4rem;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  text-align: left;
+  margin: 3.2rem 0;
+}
+.story-item {
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+.story-item h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+.story-item p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.story-item a {
+  color: inherit;
+}
+
+/* FOOTER */
+footer {
+  background: #121514;
+  color: #fff;
+  padding: 4.5rem 2rem 2.5rem;
+}
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #29302C;
+  padding-bottom: 3.5rem;
+}
+.footer-col h5 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+  color: #A3AFA8;
+}
+.footer-col p {
+  font-size: 0.88rem;
+  color: #798681;
+  line-height: 1.7;
+}
+.footer-col a {
+  color: #798681;
+  text-decoration: none;
+}
+.footer-col a:hover {
+  color: #fff;
+}
+.sub-footer {
+  max-width: 1280px;
+  margin: 2.2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: #586560;
+}
+
+/* --- TYPOGRAPHIC LOGO --- */
+.brand-text-logo {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+.brand-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #1A1F1D;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.brand-title span {
+  color: var(--olannta-pink);
+}
+.brand-tagline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.brand-text-logo:hover .brand-title {
+  color: var(--olannta-pink);
+}
+
+.footer-brand-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.footer-brand-title span {
+  color: var(--olannta-pink);
+}
+.footer-brand-tagline {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #8C9993;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 960px) {
+  .hero, .trade-inner, .sample-box, .range-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero {
+    margin-top: 2rem;
+  }
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+  .sample-media {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 80vh;
+    z-index: 999;
+    background: var(--bg-cream);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    overflow-y: auto;
+  }
+  nav.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 1rem 2rem 2.5rem;
+  }
+  nav ul li {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+  nav ul li a {
+    display: block;
+    padding: 1.1rem 0;
+    font-size: 1.05rem;
+  }
+  nav ul li:last-child {
+    border-bottom: none;
+    padding-top: 1rem;
+  }
+  .nav-btn {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  .section-header h2,
+  .trade-info h2,
+  .story-inner h2 {
+    font-size: 2rem;
+  }
+  .form-card,
+  .sample-form-side,
+  .sample-media {
+    padding: 2rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .sub-footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
