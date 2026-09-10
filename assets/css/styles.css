@@ -683,6 +683,13 @@ footer {
   transition: color 0.2s;
 }
 .brand-title span {
+  color: #1A1F1D;
+  transition: color 0.2s;
+}
+
+/* At rest: T and A (positions 6-7) are pink */
+.brand-title span:nth-child(6),
+.brand-title span:nth-child(7) {
   color: var(--olannta-pink);
 }
 .brand-tagline {
@@ -694,7 +701,14 @@ footer {
   text-transform: uppercase;
   margin-top: 5px;
 }
-.brand-text-logo:hover .brand-title {
+/* On hover: A-N-N-A (positions 3-5, 7) are pink, others black */
+.brand-text-logo:hover .brand-title span {
+  color: #1A1F1D;
+}
+.brand-text-logo:hover .brand-title span:nth-child(3),
+.brand-text-logo:hover .brand-title span:nth-child(4),
+.brand-text-logo:hover .brand-title span:nth-child(5),
+.brand-text-logo:hover .brand-title span:nth-child(7) {
   color: var(--olannta-pink);
 }
 
