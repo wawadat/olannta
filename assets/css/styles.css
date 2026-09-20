@@ -245,7 +245,7 @@ nav a:hover {
   background-image: linear-gradient(to top, rgba(20,28,24,0.88) 0%, rgba(20,28,24,0.2) 65%, transparent 100%),
                     url('../images/hero-studio-donegal.jpg');
   background-size: cover;
-  background-position: center right;
+  background-position: 50% 40%;
   color: #fff;
 }
 .hero-visual-caption h3 {
