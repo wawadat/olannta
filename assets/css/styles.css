@@ -243,9 +243,9 @@ nav a:hover {
   justify-content: flex-end;
   padding: 2.2rem;
   background-image: linear-gradient(to top, rgba(20,28,24,0.88) 0%, rgba(20,28,24,0.2) 65%, transparent 100%),
-                    url('../images/hero-heritage.jpg');
+                    url('../images/hero-studio-donegal.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   color: #fff;
 }
 .hero-visual-caption h3 {
