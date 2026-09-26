@@ -242,9 +242,10 @@ nav a:hover {
   flex-direction: column;
   justify-content: flex-end;
   padding: 2.2rem;
-  background-image: url('../images/hero-studio-donegal.jpg');
+  background-image: linear-gradient(to top, rgba(20,28,24,0.88) 0%, rgba(20,28,24,0.2) 65%, transparent 100%),
+                    url('../images/hero-studio-donegal.webp');
   background-size: cover;
-  background-position: 50% 40%;
+  background-position: center;
   color: #fff;
 }
 .hero-visual-caption h3 {
