@@ -685,15 +685,26 @@ footer {
   transition: color 0.2s;
 }
 
-/* At rest: positions 1-5 (OLANN) black, 6-7 (TA) pink */
-.brand-title span:nth-child(n) {
-  color: #1A1F1D;
+/* At rest: wool colors - O, N (1,5): Golden | L, T (2,6): Mauve | A, A (3,7): Teal | N (4): Beige */
+.brand-title span:nth-child(1),
+.brand-title span:nth-child(5) {
+  color: #C4A657;
 }
 
-.brand-title span:nth-child(6),
-.brand-title span:nth-child(7) {
-  color: var(--olannta-pink);
+.brand-title span:nth-child(2),
+.brand-title span:nth-child(6) {
+  color: #8B5A7D;
 }
+
+.brand-title span:nth-child(3),
+.brand-title span:nth-child(7) {
+  color: #6B8E8E;
+}
+
+.brand-title span:nth-child(4) {
+  color: #A89968;
+}
+
 .brand-tagline {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.62rem;
@@ -703,18 +714,34 @@ footer {
   text-transform: uppercase;
   margin-top: 5px;
 }
-/* On hover: O, L, T (1,2,6) black; A, N, N, A (3,4,5,7) pink */
-.brand-text-logo:hover .brand-title span:nth-child(1),
-.brand-text-logo:hover .brand-title span:nth-child(2),
-.brand-text-logo:hover .brand-title span:nth-child(6) {
-  color: #1A1F1D;
+
+/* On hover: rotating color pattern */
+.brand-text-logo:hover .brand-title span:nth-child(1) {
+  color: #8B5A7D;
 }
 
-.brand-text-logo:hover .brand-title span:nth-child(3),
-.brand-text-logo:hover .brand-title span:nth-child(4),
-.brand-text-logo:hover .brand-title span:nth-child(5),
+.brand-text-logo:hover .brand-title span:nth-child(2) {
+  color: #6B8E8E;
+}
+
+.brand-text-logo:hover .brand-title span:nth-child(3) {
+  color: #A89968;
+}
+
+.brand-text-logo:hover .brand-title span:nth-child(4) {
+  color: #C4A657;
+}
+
+.brand-text-logo:hover .brand-title span:nth-child(5) {
+  color: #8B5A7D;
+}
+
+.brand-text-logo:hover .brand-title span:nth-child(6) {
+  color: #6B8E8E;
+}
+
 .brand-text-logo:hover .brand-title span:nth-child(7) {
-  color: var(--olannta-pink);
+  color: #A89968;
 }
 
 .footer-brand-title {
