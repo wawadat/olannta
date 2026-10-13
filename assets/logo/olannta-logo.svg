@@ -1,0 +1,31 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define the colors from the wool samples -->
+  <defs>
+    <style>
+      .logo-text { font-family: 'Playfair Display', serif; font-weight: 600; }
+      .logo-text-main { font-size: 32px; fill: #1A1F1D; }
+      .logo-text-ta { font-size: 32px; fill: #C4A657; }
+    </style>
+  </defs>
+
+  <!-- Icon: 4 curved lines representing yarn/threads -->
+  <!-- Pair 1: Golden Yellow and Golden Yellow (lines 1-2) -->
+  <path d="M 30 50 Q 70 45 110 50" stroke="#C4A657" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 30 65 Q 70 60 110 65" stroke="#C4A657" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Pair 2: Deep Mauve and Deep Mauve (lines 3-4) -->
+  <path d="M 30 85 Q 70 80 110 85" stroke="#8B5A7D" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 30 100 Q 70 95 110 100" stroke="#8B5A7D" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Pair 3: Slate Blue and Slate Blue (lines 5-6) -->
+  <path d="M 30 120 Q 70 115 110 120" stroke="#6B8E8E" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 30 135 Q 70 130 110 135" stroke="#6B8E8E" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Pair 4: Oatmeal Beige and Oatmeal Beige (lines 7-8) -->
+  <path d="M 30 155 Q 70 150 110 155" stroke="#A89968" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 30 170 Q 70 165 110 170" stroke="#A89968" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Text: OLANNTA -->
+  <text x="100" y="210" text-anchor="middle" class="logo-text logo-text-main">OLANN</text>
+  <text x="155" y="210" text-anchor="start" class="logo-text logo-text-ta">TA</text>
+</svg>
