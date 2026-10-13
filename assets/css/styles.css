@@ -667,7 +667,9 @@ footer {
 /* --- TYPOGRAPHIC LOGO --- */
 .brand-text-logo {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
   text-decoration: none;
   line-height: 1;
   letter-spacing: 0.04em;
@@ -680,6 +682,7 @@ footer {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 0.2s;
+  margin: 0;
 }
 .brand-title span {
   transition: color 0.2s;
@@ -712,7 +715,8 @@ footer {
   color: var(--text-muted);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-top: 5px;
+  margin: 0;
+  white-space: nowrap;
 }
 
 /* On hover: rotating color pattern */
