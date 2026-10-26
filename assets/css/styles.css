@@ -244,8 +244,11 @@ nav a:hover {
   padding: 2.2rem;
   background-image: url('../images/hero-basket.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: 35% center;
   color: #fff;
+}
+.hero-visual-caption {
+  display: none;
 }
 .hero-visual-caption h3 {
   font-family: 'Playfair Display', serif;
