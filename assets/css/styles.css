@@ -153,65 +153,65 @@ nav a:hover {
 /* --- 2. HERO SECTION --- */
 .hero {
   background: #F5D3E1;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem 5rem;
   text-align: center;
-}
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-dark);
-  margin-bottom: 2rem;
-}
-.hero-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  line-height: 1.1;
   margin-bottom: 3rem;
-  letter-spacing: -0.02em;
 }
-.hero-facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.hero-headline-box {
+  border: 2px solid var(--text-dark);
+  padding: 3rem 3rem;
   margin-bottom: 3rem;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
-.hero-fact {
-  background: #fff;
-  border: 1px solid var(--border-color);
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
+.hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
-.hero-fact p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+.hero-support {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-support-text {
+  font-size: 0.9rem;
+  color: var(--text-dark);
   line-height: 1.6;
   margin: 0;
 }
 .hero-cta {
   background: var(--donegal-green);
   color: #fff;
-  padding: 1rem 2.5rem;
-  border-radius: 4px;
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
   transition: transform 0.15s, opacity 0.2s;
   font-family: inherit;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .hero-cta:hover {
