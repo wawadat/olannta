@@ -194,8 +194,13 @@ nav a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+.hero-support-box {
+  border: 1px solid #9B8B96;
+  padding: 1.5rem 1.8rem;
+  border-radius: 2px;
+}
 .hero-support-text {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-dark);
   line-height: 1.6;
   margin: 0;
